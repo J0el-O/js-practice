@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans</title>
+</head>
+
+<body>
+
+  <button onclick="
+
+ const randomNumber = Math.random();
+    let result = '';
+    if (randomNumber < 0.5) {
+      result = 'heads';
+    } else {
+      result = 'tails';
+    }
+    console.log(result)
+
+    const computerToss = Math.random();
+    let computerMove = '';
+    if (computerToss < 0.5) {
+      computerMove = 'heads';
+    } else {
+      computerMove = 'tails';
+    }
+    console.log(computerMove)
+
+
+    if(result === computerMove) {
+      alert('You win')
+    } else { 
+      alert('You lose')
+    }
+    
+    ">Toss coin</button>
+
+
+  <script>
+    // true
+    // false
+
+    // console.log(3 > 5);
+
+    // if (true) {
+    //   console.log('hello');
+    // } else {
+    //   console.log('goodbye')
+    // }
+
+    // const age = 15;
+
+    // if (age >= 16) {
+    //   console.log('You can drive');
+    //   console.log('Congrats!');
+    // } else if (age >= 14) {
+    //   console.log('Almost there')
+    // } else {
+    //   console.log('You cannot drive');
+    // }
+
+
+    // AND Operator
+    // console.log(true && false);
+    // console.log(0.2 >= 0 && 0.2 < 1 / 3)
+
+    // OR Operator
+    // console.log(true || false);
+
+    // NOT Operator
+    // console.log(!false);
+
+    /* if (0) {
+      console.log('truthy');
+    }
+    
+    const cartQuantity = 5;
+    
+    if (cartQuantity) {
+      console.log('cart has products');
+    }
+    
+    console.log(!0);
+    
+    console.log('text' / 5);
+    
+    const variable1 = undefined;
+    console.log(variable1);
+    */
+
+    /*const result = 0 ? 'truthy' : 'falsy';
+    console.log(result);
+    
+    false && console.log('hello');
+    
+    const message = 5 && 'hello';
+    console.log(message);
+    
+    const currency = undefined || 'USD';
+    console.log(currency);
+    */
+
+    // let hour = 12;
+    // let greeting = '';
+    // if (hour >= 6 && hour < 12) {
+    //   greeting = 'Good morning!';
+    // } else if (hour >= 13 && hour < 17) {
+    //   greeting = 'Good afternoon!';
+    // } else if (hour >= 18 && hour < 23) {
+    //   greeting = 'Good night!';
+    // }
+
+    let hour = 13;
+    let greeting =
+      hour >= 6 && hour < 12
+        ? 'Good morning!'
+        : hour >= 13 && hour < 17
+          ? 'Good afternoon!'
+          : hour >= 18 && hour < 23
+            ? 'Good night!'
+            : 'Good evening!';
+
+    console.log(greeting); // This will display 'Good night!'
+
+    hour = 6;
+    console.log(
+      (greeting =
+        hour >= 6 && hour < 12
+          ? 'Good morning!'
+          : hour >= 13 && hour < 17
+            ? 'Good afternoon!'
+            : hour >= 18 && hour < 23
+              ? 'Good night!'
+              : 'Good evening!')
+    ); // This will display 'Good morning!'
+
+    hour = 19;
+    console.log(
+      (greeting =
+        hour >= 6 && hour < 12
+          ? 'Good morning!'
+          : hour >= 13 && hour < 17
+            ? 'Good afternoon!'
+            : hour >= 18 && hour < 23
+              ? 'Good evening!'
+              : 'Good night!')
+    ); // This will display 'Good morning!'
+
+
+    hour = 5;
+    console.log(
+      (greeting =
+        hour >= 6 && hour < 12
+          ? 'Good morning!'
+          : hour >= 13 && hour < 17
+            ? 'Good afternoon!'
+            : hour >= 18 && hour < 23
+              ? 'Good evening!'
+              : 'Good night!')
+    ); // This will display 'Good morning!'
+
+    let name = ' Joel.';
+
+
+    console.log(
+      (greeting = (
+        hour >= 6 && hour < 12
+          ? 'Good morning'
+          : hour >= 13 && hour < 17
+            ? 'Good afternoon'
+            : hour >= 18 && hour < 23
+              ? 'Good evening'
+              : 'Good night') + name)
+    );
+
+    hour = 19;
+
+    console.log(
+      (greeting =
+        hour >= 6 && hour < 12
+          ? `Good morning${name}`
+          : hour >= 13 && hour < 17
+            ? `Good afternoon${name}`
+            : hour >= 18 && hour < 23
+              ? `Good evening${name}`
+              : `Good night${name}`)
+    );
+
+
+    age = 64;
+    const isHoliday = false;
+
+    if ((age <= 6 || age >= 65) && !isHoliday) {
+      console.log('Discount');
+    } else if ((age <= 6 || age >= 65) && isHoliday) {
+      console.log('No discount');
+    }
+
+   
+    // randomNumber
+    // console.log(result)
+
+    // console.log(result)
+    // console.log(result)
+    // console.log(result)
+
+    // const guess = 'heads';
+
+    // if (guess === result) {
+    //   console.log('You win')
+    // } else {
+    //   console.log('You lose')
+    // }
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
