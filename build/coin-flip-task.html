@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coin flip task</title>
+</head>
+
+<body>
+  Coin Flip
+  <p>
+    <button onclick=" playGame('Heads')">Heads</button>
+    <button onclick=" playGame('Tails')">Tails</button>
+    <button onclick="resetScore()">Reset Score</button>
+  </p>
+
+
+
+
+
+
+
+
+
+  <script>
+
+    const score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0
+    }
+    function playGame(guess) {
+      const randomNumber = Math.random()
+      const result = randomNumber < 0.5 ? 'Heads' : 'Tails';
+      let determinant = guess === result ? 'You win!' : 'You Lose!'
+      guess === result ? score.wins++ : score.losses++
+
+      alert(`You picked ${guess}, computer picked ${result}. 
+Wins:${score.wins}, Losses:${score.losses}. ${determinant} `)
+      console.log(score);
+      localStorage.setItem('score', JSON.stringify(score))
+    }
+
+    function resetScore () {
+      console.log('Score has been reset.')
+      score.wins = 0
+      score.losses = 0
+      localStorage.removeItem('score');
+    }
+    
+  </script>
+</body>
+
+</html>

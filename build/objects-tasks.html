@@ -18,9 +18,65 @@
 
 
 
-  
-  <script>
 
+  <script>
+    const product1 = {
+      name: 'Basketball',
+      price: 2095,
+      'delivery-time': '3 days'
+    };
+
+    const product2 = {
+      name: 'Sneakers',
+      price: 1000,
+      'delivery-time': '3 days'
+    };
+
+    function comparePrices(product1, product2) {
+      if (product1.price < product2.price) {
+        return product1;
+      }else {
+        return product2;
+      }
+    };
+
+    function isSameProduct(product1, product2) {
+      if(product1.price === product2.price) {
+        console.log(true)
+      }else {
+        console.log(false)
+      }
+    }
+
+    const product3 = {
+      name: 'socks',
+      price: 500,
+      'delivery-time': '3 days'
+    }
+
+    const product4 = {
+      name: 'shirt',
+      price: 500,
+      'delivery-time': '3 days'
+    }
+
+    isSameProduct(product3, product4);
+
+    console.log(product1);
+
+        product1.price = 2595;
+
+    console.log(product1);
+
+    console.log(comparePrices(product1, product2));
+
+    const originalString = 'Happy Valentines Day.'
+    const lowercaseString = originalString.toUpperCase();
+    console.log(lowercaseString);
+
+
+
+   
   </script>
 </body>
 </html>
