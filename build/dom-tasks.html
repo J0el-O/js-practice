@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM tasks</title>
+</head>
+<body>
+  <button id="js-button">9a</button>
+  <button id="js-button2">9b</button>
+  <p>
+    <button onclick="document.querySelector('#result').innerHTML = 'You chose: heads'">heads</button>
+    <button onclick="document.querySelector('#result').innerHTML = 'You chose: tails'">tails</button>
+  </p>
+  <p id="result"></p>
+  <input type="text" name="js-input" id="js-input" placeholder="Write name here" onkeydown="onEnter('Enter')">
+  <button onclick="submit()" >Submit</button> 
+  <p id="js-message"></p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+  console.log(document.querySelector('#js-button'));
+  console.log(document.querySelector('#js-button2').innerHTML = '9b done!')
+
+  
+function submit () { 
+    let input = document.querySelector('#js-input');
+    document.querySelector('#js-message')
+      .innerHTML = `Your name is ${input.value}` 
+  }
+
+function onEnter(){
+  if (event.key === 'Enter'){
+    submit()
+  }
+}
+
+   </script>
+</body>
+</html>
