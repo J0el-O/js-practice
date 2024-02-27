@@ -4,16 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Projects</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <p>Youtube Subscribe Button</p>
-  <button id="js-sub-button" onclick="subscribe();">Subscribe</button>
-
-  <p>Amazon Shipping Calculator</p>
-  <p>Orders under $40 = +$10 shipping.</p>
-  <p>Orders over $40 = FREE shipping</p>
-  <input type="text" name="shipping-input" id="js-cost-input" placeholder="Cost of Order" onkeydown="onEnter(event)" > <button onclick="calculateTotal();" >Calculate</button>
-  <p id="js-total"></p>
+<body class="pl-4 mt-6 font-arial">
+  <div class="py-4">
+    <p class="text-xl font-semibold">Youtube Subscribe Button</p>
+    <button class="my-4 py-1.5 px-4 text-white font-semibold  rounded-3xl border-black bg-black" id="js-sub-button" onclick="subscribe();">Subscribe</button>
+  </div>
+    <div class="space-y-2 font-semibold">
+      <p>Amazon Shipping Calculator</p>
+      <p>Orders under $40 = +$10 shipping.</p>
+      <p>Orders over $40 = FREE shipping</p>
+    </div>
+      <input type="text" name="shipping-input" id="js-cost-input" class="border border-solid border-black px-3 py-2 mt-3 font-semibold" placeholder="Cost of Order" onkeydown="onEnter(event)" > <button class=" border-black  px-4 py-2 bg-green-800 hover:bg-green-700 text-white" onclick="calculateTotal();" >Calculate</button>
+      <p id="js-total"></p>
 
 
 
@@ -60,8 +64,12 @@
    function subscribe () {
     if (btnElement.innerText === 'Subscribe'){
       btnElement.innerText = 'Subscribed';
+      btnElement.classList.remove('bg-black')
+      btnElement.classList.add('bg-red-500');
     } else {
       btnElement.innerText = 'Subscribe';
+      btnElement.classList.add('bg-black');
+      btnElement.classList.remove('bg-red-500');
     }
    }
   </script>
