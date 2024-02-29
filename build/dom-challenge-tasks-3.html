@@ -5,77 +5,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>tasks</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
-  <h1 class="text-2xl">
+<body class="bg-black text-white ml-6 mt-12">
+  <h1 class="text-4xl pb-4 font-bold">
     Calculator
   </h1>
-  <p id="js-calculation"></p>
+  <p class="text-3xl text-wrap pb-4 font-semibold pl-4 max-w-sm" id="js-calculation"></p>
+<div class="text-2xl space-x-1 space-y-2">
+
   <p>
-    <button onclick="updateCalculation(1)">
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(1)">
       1
     </button>
-    <button onclick="updateCalculation(2)">
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(2)">
       2
     </button>
-    <button onclick="updateCalculation(3)">
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(3)">
       3
     </button>
-    <button onclick="updateCalculation('+')">
+    <button class="bg-yellow-500 py-6 px-8 rounded-full" onclick="updateCalculation('+')">
       +
     </button>
-    <button onclick="updateCalculation('-')">
-      -
-    </button>
+    
 
   </p>
 
   <p>
-    <button onclick="updateCalculation(4)">
+    
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(4)">
       4
     </button>
-    <button onclick="updateCalculation(5)">
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(5)">
       5
     </button>
-    <button onclick="updateCalculation(6)">
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(6)">
       6
     </button>
-    <button onclick="updateCalculation('*')">
+    <button class="bg-yellow-500 py-6 px-8 rounded-full" onclick="updateCalculation('-')">
+      -
+    </button>
+    
+    
+  </p>
+  
+  <p>
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(7)">
+      7
+    </button>
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(8)">
+      8
+    </button>
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(9)">
+      9
+    </button>
+    <button class="bg-yellow-500 py-6 px-8 rounded-full" onclick="updateCalculation('*')">
       *
     </button>
-    <button onclick="updateCalculation('/')">
+  </p>
+  <p> 
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="updateCalculation(9)">
+      0
+    </button>
+    <button class="bg-gray-800 py-5 px-8 rounded-full" onclick="updateCalculation('.')">
+      .
+    </button>
+    <button class="bg-gray-800 py-6 px-8 rounded-full" onclick="total()">
+      =
+    </button>
+    <button class="bg-yellow-500 py-6 px-8 rounded-full" onclick="updateCalculation('/')">
       /
     </button>
   </p>
-
-  <p>
-    <button onclick="updateCalculation(7)">
-      7
+</div>
+  <p> 
+    <button class="text-xl bg-gray-800 ml-3 mt-2 py-4 px-2 rounded-full" onclick="clearData()">
+      Clear
     </button>
-    <button onclick="updateCalculation(8)">
-      8
-    </button>
-    <button onclick="updateCalculation(9)">
-      9
-    </button>
-    <button onclick="total()">
-      =
-    </button>
-    <button onclick="clearData()">
-      A/C
+    <button class="text-xl bg-gray-800 ml-3 mt-2 py-5 px-5 rounded-full" onclick="backSpace()">
+      Del
     </button>
   </p>
-
-
-
+  
+  
+  
   <script>
-    let calculation = localStorage.getItem('calculation') || 0;
+    let calculation = localStorage.getItem('calculation') || '';
     let paragraph = document.querySelector('#js-calculation').innerHTML;
     displayCalculation();
 
     function updateCalculation(number) {
-      calculation += number;
+      calculation += `${number}`;
       document.querySelector('#js-calculation').innerHTML = calculation;
       
     }
@@ -87,17 +108,34 @@
      }
 
      function clearData (){
-      calculation = 0;
+      calculation = '';
       document.querySelector('#js-calculation').innerHTML = 0
       console.log('Cleared.');
       localStorage.removeItem('calculation')
      }
-      
+
+     function backSpace(){
+      calculation = calculation.substring(0, calculation.length - 1)
+      document.querySelector('#js-calculation')
+        .innerHTML = calculation
+        if (calculation = ''){
+          document.querySelector('#js-calculation')
+            .innerHTML = 0
+            return;
+        }
+     }
+
+     function typing(){
+      if(event.key === '1'){
+        document.querySelector('#js-calculation')
+          .innerHTML = 1
+      }
+     }      
       
 
 
     function displayCalculation(){
-      document.querySelector('#js-calculation').innerHTML = calculation
+      document.querySelector('#js-calculation').innerHTML = 0
     }
   </script>
 </body>

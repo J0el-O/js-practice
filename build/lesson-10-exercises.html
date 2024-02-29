@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 10 exercises</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<style>
+  .isToggled{
+    @apply background-color: black;
+    @apply color: white;
+  }
+</style>
+<body class="mt-12 text-center">
+  <button id="js-addtocart" class="px-8 py-1 bg-yellow-300 rounded-2xl">Add to Cart</button>
+  <button onclick="onClick()" id="js-requestnow" class="ml-2 px-8 py-3 bg-black text-white hover:opacity-90 font-semibold rounded-md">Request now</button>
+  <button id="js-schedulelater" class="ml-2 px-8 py-3 bg-gray-100 text-black font-semibold rounded-md">Schedule for later</button>
+<p class="space-x-4 pt-12">
+  <button onclick="onclick2()" id="js-gaming" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Gaming</button>
+  <button id="js-music" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Music</button>
+  <button id="js-tech" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Tech</button>
+</p>
+
+
+
+
+
+
+
+
+
+  <script>
+  let requestBtn = document.querySelector('#js-requestnow');
+  let gamingBtn = document.querySelector('#js-gaming');
+  let musicBtn = document.querySelector('#js-music');
+  let techBtn = document.querySelector('#js-tech');
+  console.log(gamingBtn.classList.contains('.isToggled'))
+  
+  
+
+  function onClick(){
+    if(requestBtn.innerHTML === 'Request now'){
+      requestBtn.innerHTML = 'Requested'
+      requestBtn.classList.add('bg-slate-200')
+      requestBtn.classList.remove('bg-black')
+      requestBtn.classList.add('text-black')
+      requestBtn.classList.remove('text-white')
+    
+    } else {
+      requestBtn.innerHTML = 'Request now'
+      requestBtn.classList.remove('bg-slate-200')
+      requestBtn.classList.add('bg-black')
+      requestBtn.classList.add('text-white')
+      requestBtn.classList.remove('text-black')
+    }
+  }
+ 
+  function isToggled(){
+    +  innerHTML.classList.add('bg-slate-100')
+    +  innerHTML.classList.add('text-black')
+    +  innerHTML.classList.remove('bg-black')
+    +  innerHTML.classList.remove('text-white')
+  }
+
+  function onclick2(){
+    if (!gamingBtn.classList.contains('isToggled')){
+      gamingBtn.classList.add('isToggled')
+    } else {
+      gamingBtn.classList.remove('isToggled')
+    }
+  }
+  </script>
+</body>
+</html>
