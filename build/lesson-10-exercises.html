@@ -8,8 +8,9 @@
 </head>
 <style>
   .isToggled{
-     background-color: white;
+     background-color: rgb(146, 139, 139);
      color: black;
+     border: 1px;
   }
 </style>
 <body class="mt-12 text-center">
@@ -17,9 +18,15 @@
   <button onclick="onClick()" id="js-requestnow" class="ml-2 px-8 py-3 bg-black text-white hover:opacity-90 font-semibold rounded-md">Request now</button>
   <button id="js-schedulelater" class="ml-2 px-8 py-3 bg-gray-100 text-black font-semibold rounded-md">Schedule for later</button>
 <p class="space-x-4 pt-12">
-  <button onclick="onclick2()" id="js-gaming" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Gaming</button>
-  <button id="js-music" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Music</button>
-  <button id="js-tech" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Tech</button>
+  <button onclick="onclick2('Gaming')" id="js-gaming" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Gaming</button>
+  <button onclick="onclick2('Music')" id="js-music" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Music</button>
+  <button onclick="onclick2('Tech')" id="js-tech" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Tech</button>
+  </p>
+
+<p class="space-x-4 pt-12">
+  <button onclick="onclick3()" id="js-gaming2" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Gaming</button>
+  <button onclick="onclick4()" id="js-music2" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Music</button>
+  <button onclick="onclick5()" id="js-tech2" class="font-semibold py-2 px-6 bg-black text-white rounded-md">Tech</button>
 </p>
 
 
@@ -35,6 +42,10 @@
   let gamingBtn = document.querySelector('#js-gaming');
   let musicBtn = document.querySelector('#js-music');
   let techBtn = document.querySelector('#js-tech');
+
+  let gamingBtn2 = document.querySelector('#js-gaming2')
+  let musicBtn2 = document.querySelector('#js-music2')
+  let techBtn2 = document.querySelector('#js-tech2')
   console.log(gamingBtn.classList.contains('.isToggled'))
   
   
@@ -57,11 +68,50 @@
   }
  
   
-  function onclick2(){
-    if (!gamingBtn.classList.contains('isToggled')){
-      gamingBtn.classList.add('isToggled')
+  function onclick2(toggle){
+    if (toggle === 'Gaming' & !gamingBtn.classList.contains('isToggled')){
+      gamingBtn.classList.add('isToggled');
     } else {
-      gamingBtn.classList.remove('isToggled')
+      gamingBtn.classList.remove('isToggled');
+    
+    }
+    
+    if( toggle === 'Music' & !musicBtn.classList.contains('isToggled')){
+      musicBtn.classList.add('isToggled');
+    } else {
+      musicBtn.classList.remove('isToggled')
+    }
+
+    if(toggle === 'Tech' & !techBtn.classList.contains('isToggled')){
+      techBtn.classList.add('isToggled');
+    } else {
+      techBtn.classList.remove('isToggled')
+    }
+  }
+
+  function onclick3(){
+    if (!gamingBtn2.classList.contains('isToggled')){
+      gamingBtn2.classList.add('isToggled');
+    } else {
+      gamingBtn2.classList.remove('isToggled');
+    
+    }
+  }
+
+  function onclick4(){
+    if (!musicBtn2.classList.contains('isToggled')){
+      musicBtn2.classList.add('isToggled');
+    } else {
+      musicBtn2.classList.remove('isToggled');
+    }
+   
+  }
+
+  function onclick5(){
+    if (!techBtn2.classList.contains('isToggled')){
+      techBtn2.classList.add('isToggled');
+    } else {
+      techBtn2.classList.remove('isToggled');
     }
   }
   </script>
