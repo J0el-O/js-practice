@@ -8,8 +8,8 @@
 </head>
 <style>
   .isToggled{
-    @apply background-color: black;
-    @apply color: white;
+     background-color: white;
+     color: black;
   }
 </style>
 <body class="mt-12 text-center">
@@ -56,13 +56,7 @@
     }
   }
  
-  function isToggled(){
-    +  innerHTML.classList.add('bg-slate-100')
-    +  innerHTML.classList.add('text-black')
-    +  innerHTML.classList.remove('bg-black')
-    +  innerHTML.classList.remove('text-white')
-  }
-
+  
   function onclick2(){
     if (!gamingBtn.classList.contains('isToggled')){
       gamingBtn.classList.add('isToggled')
