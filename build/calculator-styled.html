@@ -115,10 +115,12 @@
      }
 
      function backSpace(){
-      calculation = calculation.substring(0, calculation.length - 1)
+      // calculation = calculation.substring(0, calculation.length - 1)
+      let slicedCalculation = calculation.slice(0, -1);
+      calculation = slicedCalculation
       document.querySelector('#js-calculation')
         .innerHTML = calculation
-        if (calculation = ''){
+        if (calculation === ''){
           document.querySelector('#js-calculation')
             .innerHTML = 0
             return;
